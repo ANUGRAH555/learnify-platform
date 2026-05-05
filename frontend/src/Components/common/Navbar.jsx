@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faChalkboardUser } from "@fortawesome/free-solid-svg-icons";
 import { authService } from "../../api/auth.service";
@@ -28,8 +27,13 @@ function Navbar(props) {
   return (
     <div>
       <nav className="bg-white w-full flex flex-row justify-between items-center px-[4vw] shadow-[2px_2px_10px_rgba(0,0,0,0.15)] z-[999]">
-        <div className="flex items-center justify-center">
-          <img src={logo} alt="" className="w-[300px] h-[65px] cursor-pointer" />
+        <div
+          className="flex items-center justify-center cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          <span className="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            📚 Learnify
+          </span>
         </div>
         <div className="flex">
           <div id="menu-btn" className="hidden">
