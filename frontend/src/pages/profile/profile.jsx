@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/common/Navbar";
 import ImgUpload from "./ImgUpload";
 import Performance from "./Performance";
@@ -53,7 +52,7 @@ function Profile() {
 
   const updateUser = async (updatedData) => {
     try {
-      const res = await profileService.updateUser(id, updatedData);
+      await profileService.updateUser(id, updatedData);
 
       setUserDetails(prevDetails => ({
         ...prevDetails,

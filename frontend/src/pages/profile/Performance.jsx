@@ -38,7 +38,6 @@ const Performance = () => {
 
   const handleCertificateDownload = async (courseId) => {
     setDownloadingCert(courseId);
-    const userId = localStorage.getItem("id");
 
     console.log(courseId);
     
