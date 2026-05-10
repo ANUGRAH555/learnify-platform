@@ -63,6 +63,10 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<User>> register(@Valid @RequestBody User signUpRequest) {
         log.info("Registration attempt for email: {}", signUpRequest.getEmail());
+        if(authService.getUserByEmail(signUpRequest.getEmail()) != null){
+    return ResponseEntity.badRequest()
+            .body(new ApiResponse<>("Email already exists", null));
+}
 
         User user = authService.createUser(signUpRequest);
 

@@ -60,7 +60,9 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
     
-
+public User getUserByEmail(String email) {
+    return userRepository.findByEmail(email);
+}
 
     public void deleteUser(UUID id) {
         userRepository.deleteById(id);
